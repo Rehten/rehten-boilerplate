@@ -1,0 +1,27 @@
+@import "../atomic/colors-palette";
+
+$color-default: $white;
+$color-draw: $black;
+$color-environment: lighten($black, 30%);
+$color-primary: $blue;
+$color-info: lighten($blue, 20%);
+$color-success: $green;
+$color-warning: $yellow;
+$color-danger: $red;
+$color-love: $pink;
+$color-fear: $purple;
+
+// Для итераций
+
+$color-map: (
+        "default": $color-default,
+        "draw": $color-draw,
+        "environment": $color-environment,
+        "primary": $color-primary,
+        "info": $color-info,
+        "success": $color-success,
+        "warning": $color-warning,
+        "danger": $color-danger,
+        "love": $color-love,
+        "fear": $color-fear
+);
