@@ -4,8 +4,11 @@ html(lang='en')
         meta(charset='UTF-8')
         title 99Production
     body
-        div.rx-example
-            button#MyButton Qwerty
-            div#Readers
+        div(class='example-absolute-inside', style='position:relative;width:50px;height:50px;border:1px solid #59371f;')
+            div(class='rx-example top-center', style='width:10px;height:10px;')
+            div(class='rx-example middle-right', style='width:10px;height:10px;')
+            div(class='rx-example bottom-center', style='width:10px;height:10px;')
+            div(class='rx-example middle-left', style='width:10px;height:10px;')
+
 
 

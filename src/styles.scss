@@ -2,4 +2,33 @@
 @import "styles/frameworks/bourbon/bourbon";
 @import "styles/frameworks/susy/susy";
 @import "styles/frameworks/saffron/saffron";
+@import "styles/frameworks/cssowl/cssowl";
 
+// Самозапиленные сетки, цвета, компоненты на основе трех библиотек
+@import "styles/abstractions/complex/colors";
+@import "styles/abstractions/complex/grids";
+
+.rx-example {
+  @include border-width(1px);
+  @include border-color($color-love);
+  @include border-style(dashed);
+  @include size(10px);
+  &.animated {
+    @include explode();
+  }
+}
+
+.example-absolute-inside {
+  > .top-center {
+    @include cssowl-absolute-outside(13px, 13px, top, center);
+  }
+  > .middle-right {
+    @include cssowl-absolute-outside(13px, 13px, middle, right);
+  }
+  > .bottom-center {
+    @include cssowl-absolute-outside(13px, 13px, bottom, center);
+  }
+  > .middle-left {
+    @include cssowl-absolute-outside(13px, 13px, middle, left);
+  }
+}
