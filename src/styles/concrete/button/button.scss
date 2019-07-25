@@ -1,0 +1,5 @@
+@import "../../frameworks/sassy-inputs/main";
+
+button {
+  @include sassy-button();
+}

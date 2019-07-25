@@ -4,6 +4,9 @@
 @import "styles/frameworks/saffron/saffron";
 @import "styles/frameworks/cssowl/cssowl";
 
+// Поля ввода по умолчанию
+@import "styles/frameworks/sassy-inputs/main";
+
 // Настройки сетки
 $max-grid-size: 36;
 $susy: (
@@ -16,6 +19,4 @@ $susy: (
 @import "styles/abstractions/complex/variables/colors";
 @import "styles/concrete/grids/grids";
 @import "styles/concrete/2d-translations/2d-translations";
-
-// Поля ввода по умолчанию
-@import "styles/concrete/ui/sassy-inputs/main";
+@import "styles/concrete/button/button";
