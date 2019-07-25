@@ -1,9 +1,14 @@
 $_grid-breakpoints: (
-        uni: 0px,
         mob: 768px,
         lmob: 820px,
-        tbl: 993px,
-        dsk: 1200px
+        tbl: 1340px,
+        uni: 7000px,
+);
+
+$_grid-min-breakpoints: (
+        mob: 0,
+        lmob: map_get($_grid-breakpoints, mob),
+        tbl: map_get($_grid-breakpoints, lmob)
 );
 
 $_orientation: (

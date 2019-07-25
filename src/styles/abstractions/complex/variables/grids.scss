@@ -1,35 +1,44 @@
 @import "./../../atomic/breakpoints";
 
-@for $i from 1 through $max-grid-size
-{
   @each $key, $value in $_grid-breakpoints
   {
-    @if (($value < map_get($_grid-breakpoints, dsk)) and ($value != map_get($_grid-breakpoints, uni)))
+    @if (($value != map_get($_grid-breakpoints, uni)))
     {
-      @media screen and (min-width: $value)
-      {
-        .susy-#{$key}-#{$i} {
-          width: span($i of $max-grid-size);
-        }
-      }
       @each $o_key, $o_value in $_orientation
       {
-        @media screen and (min-width: $value) and (orientation: $o_value)
+        @if ($o_value == portrait)
         {
-          .susy-#{$key}-#{$o_key}-#{$i} {
-            width: span($i of $max-grid-size);
+          @media screen and (min-device-height: map_get($_grid-min-breakpoints, $key)) and (max-device-height: $value) and (orientation: $o_value)
+          {
+            @for $i from 1 through $max-grid-size {
+              .susy-#{$key}-#{$o_key}-#{$i} {
+                width: span($i of $max-grid-size) !important;
+              }
+            }
+          }
+        }
+        @else
+        {
+          @media screen and (min-device-width: map_get($_grid-min-breakpoints, $key)) and (max-device-width: $value) and (orientation: $o_value)
+          {
+            @for $i from 1 through $max-grid-size {
+              .susy-#{$key}-#{$o_key}-#{$i} {
+                width: span($i of $max-grid-size) !important;
+              }
+            }
           }
         }
       }
     }
     @else
     {
-      @media screen and (min-width: $value)
+      @media screen and (max-device-width: $value)
       {
-        .susy-#{$key}-#{$i} {
-          width: span($i of $max-grid-size);
+        @for $i from 1 through $max-grid-size {
+          .susy-#{$key}-#{$i} {
+            width: span($i of $max-grid-size);
+          }
         }
       }
     }
   }
-}
