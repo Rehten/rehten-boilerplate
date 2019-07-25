@@ -1,0 +1,35 @@
+@import "./../../atomic/breakpoints";
+
+@for $i from 1 through $max-grid-size
+{
+  @each $key, $value in $_grid-breakpoints
+  {
+    @if (($value < map_get($_grid-breakpoints, dsk)) and ($value != map_get($_grid-breakpoints, uni)))
+    {
+      @media screen and (min-width: $value)
+      {
+        .susy-#{$key}-#{$i} {
+          width: span($i of $max-grid-size);
+        }
+      }
+      @each $o_key, $o_value in $_orientation
+      {
+        @media screen and (min-width: $value) and (orientation: $o_value)
+        {
+          .susy-#{$key}-#{$o_key}-#{$i} {
+            width: span($i of $max-grid-size);
+          }
+        }
+      }
+    }
+    @else
+    {
+      @media screen and (min-width: $value)
+      {
+        .susy-#{$key}-#{$i} {
+          width: span($i of $max-grid-size);
+        }
+      }
+    }
+  }
+}
