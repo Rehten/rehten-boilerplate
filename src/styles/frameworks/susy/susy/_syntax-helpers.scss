@@ -56,7 +56,7 @@
 // Compile
 // -------
 /// Susy's syntax layer has various moving parts,
-/// with syntax-parsing for the grid/span shorthand,
+/// with syntax-parsing for the grids/span shorthand,
 /// and normalization for each of the resulting values.
 /// The compile function rolls this all together
 /// in a single call –
@@ -65,7 +65,7 @@
 /// Pass user input and configuration maps to the compiler,
 /// and it will hand back a map of values ready for Su.
 /// Combine this with the `su-call` function
-/// to quickly parse, normalize, and process grid calculations.
+/// to quickly parse, normalize, and process grids calculations.
 ///
 /// @group plugin-utils
 /// @see su-call
@@ -77,13 +77,13 @@
 ///   - `at $n`, `first`, or `last` location on asymmetrical grids;
 ///   - `narrow`, `wide`, or `wider` for optionally spreading
 ///     across adjacent gutters;
-///   - `of $n <spread>` for available grid columns
+///   - `of $n <spread>` for available grids columns
 ///     and spread of the container
 ///     (span counts like `of 6` are only valid
 ///     in the context of symmetrical grids);
 ///   - and `set-gutters $n` to override global gutter settings
 /// @param {map} $config [null] -
-///   Optional map of Susy grid configuration settings
+///   Optional map of Susy grids configuration settings
 /// @param {bool} $context-only [false] -
 ///   Allow the parser to ignore span and span-spread values,
 ///   only parsing context and container-spread
@@ -95,9 +95,9 @@
 ///
 /// @example scss -
 ///   $user-input: 3 wide of susy-repeat(6, 120px) set-gutters 10px;
-///   $grid-data: susy-compile($user-input, $susy);
+///   $grids-data: susy-compile($user-input, $susy);
 ///
-///   @each $key, $value in $grid-data {
+///   @each $key, $value in $grids-data {
 ///     /* #{$key}: #{$value}, */
 ///   }
 @function susy-compile(
@@ -139,7 +139,7 @@
 /// weeding out the unnecessary data,
 /// and passing the rest along to Su in the proper format.
 /// Combine this with `susy-compile` to quickly parse,
-/// normalize, and process grid calculations.
+/// normalize, and process grids calculations.
 ///
 /// @group plugin-utils
 ///
@@ -159,10 +159,10 @@
 ///
 /// @example scss -
 ///   $user-input: 3 wide of susy-repeat(6, 120px) set-gutters 10px;
-///   $grid-data: susy-compile($user-input, $susy);
+///   $grids-data: susy-compile($user-input, $susy);
 ///
 ///   .su-span {
-///     width: su-call('su-span', $grid-data);
+///     width: su-call('su-span', $grids-data);
 ///   }
 @function su-call(
   $name,

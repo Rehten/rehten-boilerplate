@@ -14,7 +14,8 @@ $susy: (
 
 // Самозапиленные сетки, цвета, компоненты на основе трех библиотек
 @import "styles/abstractions/complex/variables/colors";
-@import "styles/abstractions/complex/variables/grids";
+@import "styles/concrete/grids/grids";
+@import "styles/concrete/2d-translations/2d-translations";
 
 // Поля ввода по умолчанию
 @import "styles/concrete/ui/sassy-inputs/main";

@@ -1,0 +1,53 @@
+@import "../../abstractions/atomic/breakpoints";
+
+$transform-order: 100;
+
+@each $key, $value in $_grid-breakpoints {
+  @if (($value != map_get($_grid-breakpoints, uni))) {
+    @each $o_key, $o_value in $_orientation {
+      @if ($o_value == portrait) {
+        @media screen and (min-device-height: map_get($_grid-min-breakpoints, $key)) and (max-device-height: $value) and (orientation: $o_value) {
+          @for $i from 1 through $transform-order {
+            .move-x-#{$key}-#{$o_key}-#{$i} {
+              position: absolute;
+              margin-left: $i * 1vw;
+            }
+
+            .move-y-#{$key}-#{$o_key}-#{$i} {
+              position: absolute;
+              transform: translateY($i * 1vh);
+            }
+          }
+        }
+      } @else {
+        @media screen and (min-device-width: map_get($_grid-min-breakpoints, $key)) and (max-device-width: $value) and (orientation: $o_value) {
+          @for $i from 1 through $transform-order {
+            .move-x-#{$key}-#{$o_key}-#{$i} {
+              position: absolute;
+              margin-left: $i * 1vw;
+            }
+
+            .move-y-#{$key}-#{$o_key}-#{$i} {
+              position: absolute;
+              transform: translateY($i * 1vh);
+            }
+          }
+        }
+      }
+    }
+  } @else {
+    @media screen and (max-device-width: $value) {
+      @for $i from 1 through $transform-order {
+        .move-x-#{$key}-#{$i} {
+          position: absolute;
+          margin-left: $i * 1vw;
+        }
+
+        .move-y-#{$key}-#{$i} {
+          position: absolute;
+          transform: translateY($i * 1vh);
+        }
+      }
+    }
+  }
+}

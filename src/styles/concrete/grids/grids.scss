@@ -1,0 +1,44 @@
+@import "../../abstractions/atomic/breakpoints";
+
+@each $key, $value in $_grid-breakpoints {
+  @if (($value != map_get($_grid-breakpoints, uni))) {
+    @each $o_key, $o_value in $_orientation {
+      @if ($o_value == portrait) {
+        @media screen and (min-device-height: map_get($_grid-min-breakpoints, $key)) and (max-device-height: $value) and (orientation: $o_value) {
+          @for $i from 1 through $max-grid-size {
+            .susy-#{$key}-#{$o_key}-#{$i} {
+              width: span($i of $max-grid-size) !important;
+            }
+
+            .susy-offset-#{$key}-#{$o_key}-#{$i} {
+              margin-left: span($i of $max-grid-size) !important;
+            }
+          }
+        }
+      } @else {
+        @media screen and (min-device-width: map_get($_grid-min-breakpoints, $key)) and (max-device-width: $value) and (orientation: $o_value) {
+          @for $i from 1 through $max-grid-size {
+            .susy-#{$key}-#{$o_key}-#{$i} {
+              width: span($i of $max-grid-size) !important;
+            }
+            .susy-offset-#{$key}-#{$o_key}-#{$i} {
+              margin-left: span($i of $max-grid-size) !important;
+            }
+          }
+        }
+      }
+    }
+  } @else {
+    @media screen and (max-device-width: $value) {
+      @for $i from 1 through $max-grid-size {
+        .susy-#{$key}-#{$i} {
+          width: span($i of $max-grid-size);
+        }
+
+        .susy-offset-#{$key}-#{$i} {
+          margin-left: span($i of $max-grid-size);
+        }
+      }
+    }
+  }
+}

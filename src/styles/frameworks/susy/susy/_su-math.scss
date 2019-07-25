@@ -43,7 +43,7 @@
 /// @see susy-span
 ///
 /// @param {number | list} $span -
-///   Number or list of grid columns to span
+///   Number or list of grids columns to span
 /// @param {list} $columns -
 ///   List of columns available
 /// @param {number} $gutters -
@@ -58,7 +58,7 @@
 ///   Optional position of sub-span among full set of columns
 ///
 /// @return {length} -
-///   Relative or static length of a span on the grid
+///   Relative or static length of a span on the grids
 @function su-span(
   $span,
   $columns,
@@ -101,7 +101,7 @@
 // Su Gutter
 // ---------
 /// Calculates and returns a CSS-ready gutter width,
-/// based on normalized grid data –
+/// based on normalized grids data –
 /// a low-level version of `susy-gutter`,
 /// with all of the logic and none of the syntax sugar.
 ///
@@ -116,7 +116,7 @@
 /// @see susy-gutter
 ///
 /// @param {list} $columns -
-///   List of columns in the grid
+///   List of columns in the grids
 /// @param {number} $gutters -
 ///   Width of a gutter in column-comparable units
 /// @param {0 | 1 | -1} $container-spread -
@@ -124,7 +124,7 @@
 ///   relative to `columns` count
 ///
 /// @return {length} -
-///   Relative or static length of one gutter in a grid
+///   Relative or static length of one gutter in a grids
 @function su-gutter(
   $columns,
   $gutters,
@@ -149,7 +149,7 @@
 // Su Slice
 // --------
 /// Returns a list of columns
-/// based on a given span/location slice of the grid –
+/// based on a given span/location slice of the grids –
 /// a low-level version of `susy-slice`,
 /// with all of the logic and none of the syntax sugar.
 ///
@@ -157,16 +157,16 @@
 /// @see susy-slice
 ///
 /// @param {number} $span -
-///   Number of grid columns to span
+///   Number of grids columns to span
 /// @param {list} $columns -
-///   List of columns in the grid
+///   List of columns in the grids
 /// @param {number} $location [1] -
 ///   Starting index of a span in the list of columns
 /// @param {bool} $validate [true] -
 ///   Check that arguments are valid before proceeding
 ///
 /// @return {list} -
-///   Subset list of grid columns, based on span and location
+///   Subset list of grids columns, based on span and location
 @function su-slice(
   $span,
   $columns,
@@ -204,7 +204,7 @@
 /// @access private
 ///
 /// @param {list} $columns -
-///   List of columns in the grid
+///   List of columns in the grids
 /// @param {number} $gutters -
 ///   Width of a gutter in column-comparable units
 /// @param {0 | 1 | -1} $spread -
@@ -214,7 +214,7 @@
 ///   Check that arguments are valid before proceeding
 ///
 /// @return {number} -
-///   Total sum of column-units in a grid
+///   Total sum of column-units in a grids
 @function _su-sum(
   $columns,
   $gutters,
@@ -250,7 +250,7 @@
 /// @access private
 ///
 /// @param {number | list} $span -
-///   Pre-sliced list of grid columns to span
+///   Pre-sliced list of grids columns to span
 /// @param {list} $columns -
 ///   List of columns available
 /// @param {number} $gutters -
@@ -265,7 +265,7 @@
 ///   Check that arguments are valid before proceeding
 ///
 /// @return {length} -
-///   Relative or static length of a span on the grid
+///   Relative or static length of a span on the grids
 @function _su-calc-span(
   $span,
   $columns,
@@ -393,7 +393,7 @@
 // Needs Calc
 // ----------
 /// Check if `calc()` will be needed in defining a span,
-/// if the necessary units in a grid are not comparable.
+/// if the necessary units in a grids are not comparable.
 ///
 /// @group su-math
 /// @access private
@@ -401,7 +401,7 @@
 /// @param {list} $span -
 ///   Slice of columns to span
 /// @param {list} $columns -
-///   List of available columns in the grid
+///   List of available columns in the grids
 /// @param {number} $gutters -
 ///   Width of a gutter
 /// @param {0 | 1 | -1} $spread -

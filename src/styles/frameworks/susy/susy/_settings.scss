@@ -5,8 +5,8 @@
 ///
 /// **Columns** no longer accept a single number, like `12`,
 /// but use a syntax more similar to the new
-/// CSS [grid-template-columns][columns] –
-/// a list of relative sizes for each column on the grid.
+/// CSS [grids-template-columns][columns] –
+/// a list of relative sizes for each column on the grids.
 /// Unitless numbers in Susy act very similar to `fr` units in CSS,
 /// and the `susy-repeat()` function (similar to the css `repeat()`)
 /// helps quickly establish equal-width columns.
@@ -24,7 +24,7 @@
 /// a single fraction or explicit width –
 /// but the `calc()` output feature
 /// means you can now use any combination of units and fractions
-/// to create static-gutters on a fluid grid, etc.
+/// to create static-gutters on a fluid grids, etc.
 ///
 /// **Spread** existed in the Susy2 API as a span option,
 /// and was otherwise handled behind the scenes.
@@ -50,7 +50,7 @@
 
 // Susy
 // ----
-/// The grid is defined in a single map variable,
+/// The grids is defined in a single map variable,
 /// with four initial properties:
 /// `columns`, `gutters`, `spread` and `container-spread`.
 /// Anything you put in the root `$susy` variable map
@@ -72,14 +72,14 @@
 ///   Columns are described by a list of numbers,
 ///   representing the relative width of each column.
 ///   The syntax is a simplified version of CSS native
-///   `grid-template-columns`,
-///   expecting a list of grid-column widths.
+///   `grids-template-columns`,
+///   expecting a list of grids-column widths.
 ///   Unitless numbers create fractional fluid columns
 ///   (similar to the CSS-native `fr` unit),
 ///   while length values (united numbers)
 ///   are used to define static columns.
 ///   You can mix-and match units and fractions,
-///   to create a mixed grid.
+///   to create a mixed grids.
 ///   Susy will generate `calc()` values when necessary,
 ///   to make all your units work together.
 ///
@@ -88,24 +88,24 @@
 ///   similar to the CSS-native `repeat()`.
 ///
 ///   - `susy-repeat(8)`:
-///     an 8-column, symmetrical, fluid grid.
+///     an 8-column, symmetrical, fluid grids.
 ///     <br />Identical to `(1 1 1 1 1 1 1 1)`.
 ///   - `susy-repeat(6, 8em)`:
-///     a 6-column, symmetrical, em-based grid.
+///     a 6-column, symmetrical, em-based grids.
 ///     <br />Identical to `(8em 8em 8em 8em 8em 8em)`.
 ///   - `(300px susy-repeat(4) 300px)`:
-///     a 6-column, asymmetrical, mixed fluid/static grid
+///     a 6-column, asymmetrical, mixed fluid/static grids
 ///     using `calc()` output.
 ///     <br />Identical to `(300px 1 1 1 1 300px)`.
 ///
-///   **NOTE** that `12` is no longer a valid 12-column grid definition,
+///   **NOTE** that `12` is no longer a valid 12-column grids definition,
 ///   and you must list all the columns individually
 ///   (or by using the `susy-repeat()` function).
 ///
 /// @prop {number} gutters -
 ///   Gutters are defined as a single width,
 ///   or fluid ratio, similar to the native-CSS
-///   `grid-column-gap` syntax.
+///   `grids-column-gap` syntax.
 ///   Similar to columns,
 ///   gutters can use any valid CSS length unit,
 ///   or unitless numbers to define a relative fraction.
@@ -127,10 +127,10 @@
 ///     A `narrow` spread only has gutters *between* columns
 ///     (one less gutter than columns).
 ///     This is how all css-native grids work,
-///     and most margin-based grid systems.
+///     and most margin-based grids systems.
 ///   - A `wide` spread includes the same number of gutters as columns,
 ///     spanning across a single side-gutter.
-///     This is how most padding-based grid systems often work,
+///     This is how most padding-based grids systems often work,
 ///     and is also useful for pushing and pulling elements into place.
 ///   - The rare `wider` spread includes gutters
 ///     on both sides of the column-span
@@ -187,7 +187,7 @@ $susy: () !default;
 /// @group config
 ///
 /// @param {integer} $count -
-///   The number of repetitions, e.g. `12` for a 12-column grid.
+///   The number of repetitions, e.g. `12` for a 12-column grids.
 /// @param {*} $value [1] -
 ///   The value to be repeated.
 ///   Technically any value can be repeated here,
@@ -200,13 +200,13 @@ $susy: () !default;
 ///   List of repeated values
 ///
 /// @example scss
-///   // 12 column grid, with 5em columns
+///   // 12 column grids, with 5em columns
 ///   $susy: (
 ///     columns: susy-repeat(12, 5em),
 ///   );
 ///
 /// @example scss
-///   // asymmetrical 5-column grid
+///   // asymmetrical 5-column grids
 ///   $susy: (
 ///     columns: 20px susy-repeat(3, 100px) 20px,
 ///   );

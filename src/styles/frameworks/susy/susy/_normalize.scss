@@ -115,7 +115,7 @@
 /// @param {number | list | 'all'} $span -
 ///   Span value to normalize.
 /// @param {list} $columns -
-///   Normalized list of columns in the grid
+///   Normalized list of columns in the grids
 ///
 /// @return {number | list} -
 ///   Number or list value for `$span`
@@ -235,12 +235,12 @@
 /// @group _normal
 ///
 /// @param {number} $span -
-///   Number of grid-columns to be spanned
+///   Number of grids-columns to be spanned
 /// @param {integer | 'first' | 'last'} $location -
 ///   Starting (1-indexed) column position of a span,
 ///   or a named location keyword.
 /// @param {list} $columns -
-///   Already-normalized list of columns in the grid.
+///   Already-normalized list of columns in the grids.
 ///
 /// @return {integer} -
 ///   Numeric value for `$location`

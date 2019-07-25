@@ -1,9 +1,9 @@
 /// Susy3 API Functions
 /// ===================
 /// These three functions form the core of Susy's
-/// layout-building grid API.
+/// layout-building grids API.
 ///
-/// - Use `span()` and `gutter()` to return any grid-width,
+/// - Use `span()` and `gutter()` to return any grids-width,
 ///   and apply the results wherever you need them:
 ///   CSS `width`, `margin`, `padding`, `flex-basis`, `transform`, etc.
 /// - For asymmetrical-fluid grids,
@@ -43,18 +43,18 @@
 /// - `span(3 wide)` will return 3-columns, with an additional gutter.
 /// - location is only needed with asymmetrical grids,
 ///   where `span(3 at 2)` will return the width of
-///   specific columns on the grid.
+///   specific columns on the grids.
 ///   Since these are functions, they will not handle placement for you.
 ///
 /// ### Context Syntax: `[of <columns> <container-spread> <gutters>]`
 /// The second half of Susy's shorthand
-/// describes the grid-**context** –
+/// describes the grids-**context** –
 /// available columns, container-spread, and optional gutter override –
 /// in any order.
 /// All of these settings have globally-defined defaults:
 ///
 /// - `span(2 of 6)` will set the context to
-///   a slice of 6 columns from the global grid.
+///   a slice of 6 columns from the global grids.
 ///   More details below.
 /// - `span(2 of 12 wide)` changes the container-spread
 ///   as well as the column-context.
@@ -63,8 +63,8 @@
 ///   for this one calculation.
 ///
 /// A single unitless number for `columns`
-/// will be treated as a slice of the parent grid.
-/// On a grid with `columns: susy-repeat(12, 120px)`,
+/// will be treated as a slice of the parent grids.
+/// On a grids with `columns: susy-repeat(12, 120px)`,
 /// the shorthand `of 4` will use the parent `120px` column-width.
 /// You can also be more explicit,
 /// and say `of susy-repeat(4, 100px)`.
@@ -87,7 +87,7 @@
 /// With the default settings,
 /// `span(3)` will return the width of 3 columns,
 /// and the 2 intermediate gutters.
-/// This can be used to set the `width` property of grid elements,
+/// This can be used to set the `width` property of grids elements,
 /// or `margin` and `padding`
 /// to push, pull, and pad your elements.
 ///
@@ -109,7 +109,7 @@
 ///     based on columns and span.
 ///   - `narrow`, `wide`, or `wider` for optionally spreading
 ///     across adjacent gutters.
-///   - `of $n <spread>` for available grid columns
+///   - `of $n <spread>` for available grids columns
 ///     and spread of the container.
 ///     Span counts like `of 6` are valid
 ///     in the context of symmetrical grids,
@@ -117,7 +117,7 @@
 ///   - and `set-gutters $n` to override global gutter settings.
 ///
 /// @param {map} $config [()] -
-///   Optional map of Susy grid configuration settings.
+///   Optional map of Susy grids configuration settings.
 ///   See `$susy` documentation for details.
 ///
 /// @return {length} -
@@ -126,13 +126,13 @@
 ///   or a full `calc` function when units/fractions
 ///   are not comparable outside the browser.
 ///
-/// @example scss - span half the grid
+/// @example scss - span half the grids
 ///   .foo {
 ///     // the result is a bit under 50% to account for gutters
 ///     width: susy-span(6 of 12);
 ///   }
 ///
-/// @example scss - span a specific segment of asymmetrical grid
+/// @example scss - span a specific segment of asymmetrical grids
 ///   .foo {
 ///     width: susy-span(3 at 3 of (1 2 3 5 8));
 ///   }
@@ -157,7 +157,7 @@
 // Susy Gutter
 // -----------
 /// The gutter function returns
-/// the width of a single gutter on your grid,
+/// the width of a single gutter on your grids,
 /// to be applied where you see fit –
 /// on `margins`, `padding`, `transform`, or element `width`.
 ///
@@ -176,7 +176,7 @@
 ///   (additional shorthand will be ignored)
 ///
 /// @param {map} $config [()] -
-///   Optional map of Susy grid configuration settings.
+///   Optional map of Susy grids configuration settings.
 ///   See `$susy` documentation for details.
 ///
 /// @return {length} -
@@ -216,7 +216,7 @@
 /// to put inside the span or gutter function shorthand.
 /// This slice function returns a sub-slice of asymmetrical columns to use
 /// for a nested context.
-/// `slice(3 at 2)` will give you a subset of the global grid,
+/// `slice(3 at 2)` will give you a subset of the global grids,
 /// spanning 3 columns, starting with the second.
 ///
 /// - This is a thin syntax-sugar shell around
@@ -230,20 +230,20 @@
 /// @param {list} $span -
 ///   Shorthand expression to define the subset span, optionally containing:
 ///   - `at $n`, `first`, or `last` location on asymmetrical grids;
-///   - `of $n <spread>` for available grid columns
+///   - `of $n <spread>` for available grids columns
 ///     and spread of the container
 ///     - Span-counts like `of 6` are only valid
 ///       in the context of symmetrical grids
 ///     - Valid spreads include `narrow`, `wide`, or `wider`
 ///
 /// @param {map} $config [()] -
-///   Optional map of Susy grid configuration settings.
+///   Optional map of Susy grids configuration settings.
 ///   See `$susy` documentation for details.
 ///
 /// @return {list} -
 ///   Subset list of columns for use for a nested context
 ///
-/// @example scss - Return a nested segment of asymmetrical grid
+/// @example scss - Return a nested segment of asymmetrical grids
 ///   $context: susy-slice(3 at 3 of (1 2 3 5 8));
 ///   /* $context: #{$context}; */
 @function susy-slice(
@@ -263,15 +263,15 @@
 /// and inconsistent subpixel rounding.
 /// In addition to floats and tables,
 /// we can now use much more powerful tools,
-/// like flexbox and CSS grid,
+/// like flexbox and CSS grids,
 /// to build more interesting and responsive layouts.
 ///
 /// With Susy3, we hope you'll start moving in that direction.
 /// You can still build classic 12-column Grid Systems,
 /// and we'll help you get there,
-/// but Susy3 is primarily designed for a grid-math-on-demand
+/// but Susy3 is primarily designed for a grids-math-on-demand
 /// approach to layout:
-/// applying our functions only where you really need grid math.
+/// applying our functions only where you really need grids math.
 /// Read the [intro article by OddBird][welcome] for more details.
 ///
 /// [welcome]: http://oddbird.net/2017/06/28/susy3/

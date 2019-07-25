@@ -11,13 +11,13 @@
 /// @access private
 ///
 /// @param {Integer} $column -
-///   1-indexed column location on the grid
-/// @param {Map} $grid -
-///   Normalized settings map representing the current grid
+///   1-indexed column location on the grids
+/// @param {Map} $grids -
+///   Normalized settings map representing the current grids
 ///
 /// @return {Length} -
 ///   Horizontal position of svg column rectangle,
-///   as distance from the grid edge
+///   as distance from the grids edge
 @function _susy-svg-column-position(
   $column,
   $grid
@@ -35,13 +35,13 @@
 
 // SVG Offset
 // ----------
-/// Determine if a grid image needs to be offset,
+/// Determine if a grids image needs to be offset,
 /// to account for edge gutters.
 ///
 /// @access private
 ///
-/// @param {Map} $grid -
-///   Normalized settings map representing the current grid
+/// @param {Map} $grids -
+///   Normalized settings map representing the current grids
 ///
 /// @return {Length | null} -
 ///   Expected distance from container edge to first column,

@@ -168,11 +168,11 @@
 /// @group _validation
 ///
 /// @param {number} $span -
-///   Number of grid-columns to be spanned
+///   Number of grids-columns to be spanned
 /// @param {integer | string} $location -
 ///   Starting (1-indexed) column-position of that span
 /// @param {list} $columns -
-///   List of available columns in the grid
+///   List of available columns in the grids
 ///
 /// @return {integer} -
 ///   Validated `$location` intiger

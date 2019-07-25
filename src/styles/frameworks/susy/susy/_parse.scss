@@ -27,7 +27,7 @@
 ///   - `at $n`, `first`, or `last` location on asymmetrical grids;
 ///   - `narrow`, `wide`, or `wider` for optionally spreading
 ///     across adjacent gutters;
-///   - `of $n <spread>` for available grid columns
+///   - `of $n <spread>` for available grids columns
 ///     and spread of the container
 ///     (span counts like `of 6` are only valid
 ///     in the context of symmetrical grids);
@@ -41,7 +41,7 @@
 ///   the `of` indicator is optional.
 ///
 /// @return {map} -
-///   Map of span and grid settings
+///   Map of span and grids settings
 ///   parsed from shorthand input –
 ///   including all the properties available globally –
 ///   `columns`, `gutters`, `spread`, `container-spread` –
