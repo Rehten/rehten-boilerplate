@@ -1,0 +1,53 @@
+@import "./../../abstractions/complex/variables/spaces";
+@import "./../../abstractions/atomic/directions";
+@import "../../abstractions/atomic/breakpoints";
+
+@each $key, $value in $_grid-breakpoints {
+  @if (($value != map_get($_grid-breakpoints, uni))) {
+    @each $o_key, $o_value in $_orientation {
+      @if ($o_value == portrait) {
+        @media screen and (min-device-height: map_get($_grid-min-breakpoints, $key)) and (max-device-height: $value) and (orientation: $o_value) {
+          @for $i from 1 through $spaces-max-size * 2 {
+            @each $j_key, $j_value in $directions
+            {
+              .padding-#{$j_key}-#{$key}-#{$o_key}-#{$i} {
+                @each $elem in $j_value
+                {
+                  padding-#{$elem}: $i/2 * 1rem;
+                }
+              }
+            }
+          }
+        }
+      } @else {
+        @media screen and (min-device-width: map_get($_grid-min-breakpoints, $key)) and (max-device-width: $value) and (orientation: $o_value) {
+          @for $i from 1 through $spaces-max-size * 2 {
+            @each $j_key, $j_value in $directions
+            {
+              .padding-#{$j_key}-#{$key}-#{$o_key}-#{$i} {
+                @each $elem in $j_value
+                {
+                  padding-#{$elem}: $i/2 * 1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  } @else {
+    @media screen and (max-device-width: $value) {
+      @for $i from 1 through $spaces-max-size * 2 {
+        @each $j_key, $j_value in $directions
+        {
+          .padding-#{$j_key}-#{$key}-#{$i} {
+            @each $elem in $j_value
+            {
+              padding-#{$elem}: $i/2 * 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
