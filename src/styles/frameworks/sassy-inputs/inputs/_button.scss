@@ -18,22 +18,19 @@
 
   background-color: $background-color;
   color: contrast_invert_background(darken(darken($background-color, 5%), 5%));
-  @include border-color(darken(saturate($background-color, 30%), 15%));
-  @include border-width(1px);
-  @include border-style(solid);
+  -webkit-box-shadow: 1px 1px 8px -2px opacify($background-color, 0.25);
+  -moz-box-shadow: 1px 1px 8px -2px opacify($background-color, 0.25);
+  box-shadow: 1px 1px 8px -2px opacify($background-color, 0.25);
+  transition: box-shadow 0.125s ease-in-out 0.06s;
 
   &::-moz-focus-inner {
     border: 0; /* Removes dotted line in Firefox */
   }
 
   &:hover, &:focus, &:active {
-    @if (lightness($background-color) < 55%) and (green($background-color) < 150) {
-      background-color: lighten($background-color, 15%);
-      @include border-color(lighten(saturate($background-color, 30%), 10%));
-    } @else {
-      background-color: darken($background-color, 15%);
-      @include border-color(darken(saturate($background-color, 30%), 40%));
-    }
+    -webkit-box-shadow: 1px 1px 8px -2px rgba(0,0,0,0);
+    -moz-box-shadow: 1px 1px 8px -2px rgba(0,0,0,0);
+    box-shadow: 1px 1px 8px -2px rgba(0,0,0,0);
   }
 
   &:disabled {
