@@ -18,9 +18,9 @@
 
   background-color: $background-color;
   color: contrast_invert_background(darken(darken($background-color, 5%), 5%));
-  -webkit-box-shadow: 1px 1px 8px -2px opacify($background-color, 0.25);
-  -moz-box-shadow: 1px 1px 8px -2px opacify($background-color, 0.25);
-  box-shadow: 1px 1px 8px -2px opacify($background-color, 0.25);
+  -webkit-box-shadow: 1px 1px 8px -2px opacify($color-draw, 0.25);
+  -moz-box-shadow: 1px 1px 8px -2px opacify($color-draw, 0.25);
+  box-shadow: 1px 1px 8px -2px opacify($color-draw, 0.25);
   transition: box-shadow 0.125s ease-in-out 0.06s;
 
   &::-moz-focus-inner {
@@ -28,14 +28,17 @@
   }
 
   &:hover, &:focus, &:active {
-    -webkit-box-shadow: 1px 1px 8px -2px rgba(0,0,0,0);
-    -moz-box-shadow: 1px 1px 8px -2px rgba(0,0,0,0);
-    box-shadow: 1px 1px 8px -2px rgba(0,0,0,0);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   }
 
   &:disabled {
     opacity: 0.3;
     cursor: not-allowed;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 
     &:hover, &:focus {
       box-shadow: none;

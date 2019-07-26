@@ -1,0 +1,6 @@
+@import "../../abstractions/complex/variables/colors";
+@import "../../frameworks/sassy-inputs/main";
+
+input.sassy-input {
+  @include sassy-text();
+}

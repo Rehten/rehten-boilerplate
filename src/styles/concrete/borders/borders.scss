@@ -1,0 +1,9 @@
+
+@each $key, $value in $color-map
+{
+  .border-#{$key} {
+    @include border-width(1px !important);
+    @include border-color($value !important);
+    @include border-style(solid !important);
+  }
+}
