@@ -5,5 +5,14 @@ html(lang='en')
         title 99Production
         meta(name="viewport", content="width=device-width, initial-scale=1")
     body
-        button MYBUTTON
-            .inner
+        - var $color_map = ["default", "draw", "environment", "primary", "info", "success", "warning", "danger", "love", "fear"];
+        div
+            - for (var $color = 0; $color < $color_map.length; $color++)
+            div.susy-offset-uni-2.susy-uni-4
+                button(class="sassy-btn-" + $color_map[$color]) #{$color_map[$color]}
+            -
+        div
+            - for (var $color = 0; $color < $color_map.length; $color++)
+            div.susy-offset-uni-2.susy-uni-4
+                button(class="sassy-btn-" + $color_map[$color], disabled=true) #{$color_map[$color]}
+            -

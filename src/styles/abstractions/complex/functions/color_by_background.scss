@@ -1,0 +1,11 @@
+@import "./../variables/colors";
+
+@function contrast_invert_background($background-color, $weight: 100, $default-font-color: $color-draw) {
+  $font-color: $default-font-color;
+
+  @if lightness($background-color) < 55%  and (green($background-color) < 150) {
+    $font-color: invert($default-font-color, $weight);
+  }
+
+  @return $font-color;
+}

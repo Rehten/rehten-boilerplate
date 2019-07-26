@@ -8,6 +8,7 @@
           @for $i from 1 through $max-grid-size {
             .susy-#{$key}-#{$o_key}-#{$i} {
               width: span($i of $max-grid-size) !important;
+              display: inline-block;
             }
 
             .susy-offset-#{$key}-#{$o_key}-#{$i} {
@@ -20,6 +21,7 @@
           @for $i from 1 through $max-grid-size {
             .susy-#{$key}-#{$o_key}-#{$i} {
               width: span($i of $max-grid-size) !important;
+              display: inline-block;
             }
             .susy-offset-#{$key}-#{$o_key}-#{$i} {
               margin-left: span($i of $max-grid-size) !important;
@@ -33,6 +35,7 @@
       @for $i from 1 through $max-grid-size {
         .susy-#{$key}-#{$i} {
           width: span($i of $max-grid-size);
+          display: inline-block;
         }
 
         .susy-offset-#{$key}-#{$i} {

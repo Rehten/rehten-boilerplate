@@ -1,5 +1,9 @@
+@import "../../abstractions/complex/variables/colors";
 @import "../../frameworks/sassy-inputs/main";
 
-button {
-  @include sassy-button();
+@each $key, $value in $color-map
+{
+  button.sassy-btn-#{$key} {
+    @include sassy-button($value);
+  }
 }

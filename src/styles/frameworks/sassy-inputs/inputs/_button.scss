@@ -1,4 +1,6 @@
-@mixin sassy-button {
+@import "./../../../abstractions/complex/functions/color_by_background";
+
+@mixin sassy-button($background-color) {
   box-sizing: border-box;
 
   cursor: pointer;
@@ -14,23 +16,28 @@
   outline: none;
   text-decoration: none;
 
-  background-color: $sassy-accent-color;
+  background-color: $background-color;
+  color: contrast_invert_background(darken(darken($background-color, 5%), 5%));
+  @include border-color(darken(saturate($background-color, 30%), 15%));
+  @include border-width(1px);
+  @include border-style(solid);
 
   &::-moz-focus-inner {
     border: 0; /* Removes dotted line in Firefox */
   }
 
-  &:hover, &:focus {
-    box-shadow: 0 rem(2) 0 $sassy-base-color;
-  }
-
-  &:active {
-    box-shadow: inset 0 rem(2) 0 darken($sassy-accent-color, 10%);
+  &:hover, &:focus, &:active {
+    @if (lightness($background-color) < 55%) and (green($background-color) < 150) {
+      background-color: lighten($background-color, 15%);
+      @include border-color(lighten(saturate($background-color, 30%), 10%));
+    } @else {
+      background-color: darken($background-color, 15%);
+      @include border-color(darken(saturate($background-color, 30%), 40%));
+    }
   }
 
   &:disabled {
-    color: darken($sassy-disabled-color, 30%);
-    background-color: $sassy-disabled-color;
+    opacity: 0.3;
     cursor: not-allowed;
 
     &:hover, &:focus {
