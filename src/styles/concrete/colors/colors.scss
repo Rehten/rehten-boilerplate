@@ -22,20 +22,5 @@
 
   .color-hover-#{$key}:hover {
     color: $value !important;
-    &::-webkit-input-placeholder {
-      color: rgba(red($value), green($value), blue($value), 0.5);
-    }
-
-    &::-moz-placeholder {
-      color: rgba(red($value), green($value), blue($value), 0.5);
-    }
-
-    &::-ms-placeholder {
-      color: rgba(red($value), green($value), blue($value), 0.5);
-    }
-
-    &::placeholder {
-      color: rgba(red($value), green($value), blue($value), 0.5);
-    }
   }
 }
