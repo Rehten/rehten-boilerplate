@@ -1,4 +1,5 @@
 @import "./../../../abstractions/complex/functions/color_by_background";
+@import "./../../bourbon/bourbon";
 
 @mixin sassy-button($background-color) {
   box-sizing: border-box;
@@ -11,13 +12,15 @@
   font-family: inherit;
   font-size: rem(14);
 
-  border: none;
+  @include border-color($background-color);
+  @include border-style(solid);
+  @include border-width(1px);
   border-radius: rem(3);
   outline: none;
   text-decoration: none;
 
   background-color: $background-color;
-  color: contrast_invert_background(darken(darken($background-color, 5%), 5%));
+  color: contrast_invert_background(darken($background-color, 10%));
   -webkit-box-shadow: 1px 1px 8px -2px opacify($color-draw, 0.25);
   -moz-box-shadow: 1px 1px 8px -2px opacify($color-draw, 0.25);
   box-shadow: 1px 1px 8px -2px opacify($color-draw, 0.25);
@@ -31,6 +34,93 @@
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    &:hover, &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+@mixin sassy-flat-button($background-color) {
+  box-sizing: border-box;
+
+  cursor: pointer;
+
+  min-height: rem(39);
+  padding: rem(12) rem(24);
+  margin-bottom: rem(10);
+  font-family: inherit;
+  font-size: rem(14);
+
+  @include border-color($background-color);
+  @include border-style(solid);
+  @include border-width(1px);
+  border-radius: rem(3);
+  outline: none;
+  text-decoration: none;
+
+  background-color: $background-color;
+  color: contrast_invert_background(darken($background-color, 10%));
+  transition: background-color 0.125s ease-in-out 0.06s;
+
+  &::-moz-focus-inner {
+    border: 0; /* Removes dotted line in Firefox */
+  }
+
+  &:hover, &:focus, &:active {
+    background-color: darken($background-color, 5%);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    &:hover, &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+@mixin sassy-flat-outline-button($background-color) {
+  box-sizing: border-box;
+
+  cursor: pointer;
+
+  min-height: rem(39);
+  padding: rem(12) rem(24);
+  margin-bottom: rem(10);
+  font-family: inherit;
+  font-size: rem(14);
+
+  border-radius: rem(3);
+  outline: none;
+  text-decoration: none;
+
+  @include border-color($background-color);
+  @include border-style(solid);
+  @include border-width(1px);
+  color: $background-color;
+  background-color: transparent;
+  transition: background-color 0.125s ease-in-out 0.06s, color 0.125s ease-in-out 0.06s;
+
+  &::-moz-focus-inner {
+    border: 0; /* Removes dotted line in Firefox */
+  }
+
+  &:hover, &:focus, &:active {
+    background: $background-color;
+    color: contrast_invert_background(darken($background-color, 10%));
   }
 
   &:disabled {

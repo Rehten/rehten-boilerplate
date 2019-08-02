@@ -3,4 +3,5 @@
 
 input.sassy-input {
   @include sassy-text();
+  transition: all 0.125s ease-in-out 0.065s;
 }

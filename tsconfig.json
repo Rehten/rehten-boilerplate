@@ -25,5 +25,5 @@
     "forkChecker": true,
     "useWebpackText": true,
     "useCache": true
-  },
+  }
 }

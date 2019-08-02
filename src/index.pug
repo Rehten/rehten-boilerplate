@@ -13,6 +13,18 @@ html(lang='en')
                 button(class="sassy-btn-" + $color_map[$color]) #{$color_map[$color]}
             -
         div
+            h1 Плоские кнопки
+            - for (var $color = 0; $color < $color_map.length; $color++)
+            div.susy-offset-uni-2.susy-uni-4
+                button(class="sassy-flat-btn-" + $color_map[$color]) #{$color_map[$color]}
+            -
+        div
+            h1 Плоские аутлайн кнопки
+            - for (var $color = 0; $color < $color_map.length; $color++)
+            div.susy-offset-uni-2.susy-uni-4
+                button(class="sassy-flat-outline-btn-" + $color_map[$color]) #{$color_map[$color]}
+            -
+        div
             h1 Задизабленные кнопки
             - for (var $color = 0; $color < $color_map.length; $color++)
             div.susy-offset-uni-2.susy-uni-4

@@ -6,4 +6,12 @@
   button.sassy-btn-#{$key} {
     @include sassy-button($value);
   }
+
+  button.sassy-flat-btn-#{$key} {
+    @include sassy-flat-button($value);
+  }
+
+  button.sassy-flat-outline-btn-#{$key} {
+    @include sassy-flat-outline-button($value);
+  }
 }
