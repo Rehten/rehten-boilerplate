@@ -1,0 +1,8 @@
+@import "./../../abstractions/complex/variables/colors";
+
+@each $key, $color in $color-map
+{
+  .bg-#{$key} {
+    background-color: $color !important;
+  }
+}

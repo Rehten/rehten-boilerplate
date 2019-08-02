@@ -1,0 +1,44 @@
+@import "./../../abstractions/complex/variables/colors";
+@import "./../../frameworks/bourbon/bourbon";
+
+.panel {
+  width: 35px;
+  margin: 5px;
+  min-height: 35px;
+  display: inline-block;
+}
+@each $key, $color in $color-map
+{
+  .panel-#{$key} {
+    position: absolute;
+    background-color: $color !important;
+    -webkit-box-shadow: 1px 1px 2px -1px opacify($color-draw, 0.25);
+    -moz-box-shadow: 1px 1px 2px -1px opacify($color-draw, 0.25);
+    box-shadow: 1px 1px 2px -1px opacify($color-draw, 0.25);
+    margin: 2.5px;
+    transition: box-shadow 0.125s ease-in-out 0.06s,
+                margin 0.125s ease-in-out 0.06s,
+                width 0.125s ease-in-out 0.06s,
+                font-size 0.125s ease-in-out 0.06s,
+                min-height 0.125s ease-in-out 0.06s;
+    width: 30px;
+    min-height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    @include border-top-radius(0.3rem);
+    @include border-bottom-radius(0.3rem);
+    &:hover {
+      font-size: 1.15rem;
+      margin: 0;
+      width: 35px;
+      min-height: 35px;
+      -webkit-box-shadow: 1px 1px 8px -2px opacify($color-draw, 0.25);
+      -moz-box-shadow: 1px 1px 8px -2px opacify($color-draw, 0.25);
+      box-shadow: 1px 1px 8px -2px opacify($color-draw, 0.25);
+    }
+  }
+}

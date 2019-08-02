@@ -42,3 +42,42 @@ html(lang='en')
             div.susy-offset-uni-2.susy-uni-4
                 input.sassy-input(class="border-" + $color_map[$color] + " color-" + $color_map[$color], placeholder=$color_map[$color])
             -
+        div
+            h1 Сетки плюс классы бэкграунда
+            - for (var $color = 0; $color < $color_map.length; $color++)
+            div.susy-uni-2(class="bg-" + $color_map[$color], style="min-height: 50px;")
+            -
+            - for (var $color = 0; $color < $color_map.length; $color++)
+            div.susy-uni-2(class="bg-" + $color_map[$color], style="min-height: 50px;")
+            -
+            - for (var $color = 0; $color < $color_map.length; $color++)
+            div.susy-uni-2(class="bg-" + $color_map[$color], style="min-height: 50px;")
+            -
+            - for (var $color = 0; $color < $color_map.length; $color++)
+            div.susy-uni-2(class="bg-" + $color_map[$color], style="min-height: 50px;")
+            -
+            - for (var $color = 0; $color < $color_map.length; $color++)
+            div.susy-uni-2(class="bg-" + $color_map[$color], style="min-height: 50px;")
+            -
+        div
+            h1 Сетки плюс классы панели
+            - for (var $color = 0; $color < $color_map.length; $color++)
+            .panel
+                div(class="panel-" + $color_map[$color]) #{$color}
+            -
+            - for (var $color = 0; $color < $color_map.length; $color++)
+            .panel
+                div(class="panel-" + $color_map[$color]) #{$color}
+            -
+            - for (var $color = 0; $color < $color_map.length; $color++)
+            .panel
+                div(class="panel-" + $color_map[$color]) #{$color}
+            -
+            - for (var $color = 0; $color < $color_map.length; $color++)
+            .panel
+                div(class="panel-" + $color_map[$color]) #{$color}
+            -
+            - for (var $color = 0; $color < $color_map.length; $color++)
+            .panel
+                div(class="panel-" + $color_map[$color]) #{$color}
+            -
