@@ -135,7 +135,7 @@
     "hammerjs": "^2.0.8",
     "jquery": "^3.4.1",
     "owl.carousel": "^2.3.4",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "react": "^16.8.6",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.8.6",
